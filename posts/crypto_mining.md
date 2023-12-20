@@ -18,33 +18,33 @@ In 2023 I think that there are some incredible financial technologies in the cry
 Zephyr is also really interesting because it's so new the current market cap is around 58 million and has only been charting since this summer so it has a ton of room to grow. The price exploded up to $50 and is sitting at around $20. I learned that it is actually quite easy to mine this coin so I wanted to show you how in this article.
 
 
-# How to Set Up Zephyr Mining
+# How to Set Up Zephyr Mining rig
 1. First you will need to Create a Zephyr wallet. This is where your mined zephyr will be deposited to. 
     - Create an account
     - Save your key file
     - Grab you wallet id for later
 
-2.  To start mining this you will need to download the xmr rig software that works for your operating system here
-    - Download software [here](https://xmrig.com/download
+2.  To start mining this you will need to download the xmr rig software that works for your operating system.
+    - [Files.](https://xmrig.com/download
 )
-    - Unzip files to your preferred location
+    - Unzip files to your preferred location.
 
 3. Start Mining Rig!
     - In the folder of your extracted files you will need to execute the `xmrig` file. I'm using linux so I created a file that will run your program with the correct configuration
 
 
     - Create a start script with the correct mining pool which can be found at [Zephyr Hero Miners](https://zephyr.herominers.com/#). 
-    - You will need to pick the closest mining pool geographically. I'm in the midwest so I'm going to pick the North American East pool: us2.zephyr.herominers.com:1123. 
+    - You will need to pick the closest mining pool geographically. I'm in the midwest so I'm going to pick the North American East pool -> us2.zephyr.herominers.com:1123. 
     - Your wallet address is the address you stored from step one and the worker name can be whatever you want .
 
 ### Create Execution Script
 This file needs to be run as an root otherwise you will get some errors. (On windows run as administrator)
 ```bash 
-echo "sudo ./xmrig --donate-level 1 -o us2.zephyr.herominers.com:1123 -u YOUR_ZEPH_WALLET_ADDRESS -p YOUR_WORKER_NAME -a rx/0 -k" > script.sh 
+echo "#!/bin/bash \n\nsudo ./xmrig --donate-level 1 -o us2.zephyr.herominers.com:1123 -u YOUR_ZEPH_WALLET_ADDRESS -p YOUR_WORKER_NAME -a rx/0 -k" > script.sh 
 
 chmod +x script.sh
 ```
-### Run your mining rig
+### Run Your Mining Rig
 ```
 ./script.sh
 ```
