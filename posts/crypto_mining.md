@@ -29,14 +29,16 @@ Zephyr is also really interesting because it's so new the current market cap is 
 )
     - Unzip files to your preferred location
 
-3. Start Mining!
+3. Start Mining Rig!
     - In the folder of your extracted files you will need to execute the `xmrig` file. I'm using linux so I created a file that will run your program with the correct configuration
-    - the command can be found
 
 
-Create a start script with the correct mining pool which can be found at [Zephyr Hero Miners](https://zephyr.herominers.com/#). You will need to pick the closest mining pool geographically. I'm in the midwest so I'm going to pick the North American East pool: us2.zephyr.herominers.com:1123. Then your wallet address is the address you stored from step one and the worker name can be whatever you want 
+    - Create a start script with the correct mining pool which can be found at [Zephyr Hero Miners](https://zephyr.herominers.com/#). 
+    - You will need to pick the closest mining pool geographically. I'm in the midwest so I'm going to pick the North American East pool: us2.zephyr.herominers.com:1123. 
+    - Your wallet address is the address you stored from step one and the worker name can be whatever you want .
 
-### Create Run Script
+### Create Execution Script
+This file needs to be run as an root otherwise you will get some errors. (On windows run as administrator)
 ```bash 
 echo "sudo ./xmrig --donate-level 1 -o us2.zephyr.herominers.com:1123 -u YOUR_ZEPH_WALLET_ADDRESS -p YOUR_WORKER_NAME -a rx/0 -k" > script.sh 
 
@@ -47,6 +49,11 @@ chmod +x script.sh
 ./script.sh
 ```
 
-Once that is downloaded you can unzip the software into a folder
-and can start running
+Congrats you are now mining free money from the interwebs! I've done my research and most CPU's won't mine crypto very fast but if you use an AMD Ryzen 9 you should be able to mine a couple zephyr coins a month and make anywhere from $20 to $40.
+
+
+![Woajks](https://raw.githubusercontent.com/ducks23/markdown-blog/main/images/wojack_beliebes.JPG
+)
+
+Be safe.
 
