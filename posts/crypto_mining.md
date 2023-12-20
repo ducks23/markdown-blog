@@ -9,7 +9,7 @@ date: '2023-12-19'
 In 2023 I think that there are some incredible financial technologies in the crypto world, but they're not quite efficient or cost effective enough but I think that time will come. 
 
 
-&nbsp;&nbsp;&nbsp;&nbsp; Some of my favorite technologies I've found so far are Thorchain, Shapeshift, Chainlink, and Zephyr.
+**&nbsp;&nbsp;&nbsp;&nbsp; Some of the most interesting technologies I've stumbled upon beside ETH and BTC are Thorchain, Shapeshift, Chainlink, and Zephyr.**
 
 &nbsp;&nbsp;&nbsp;&nbsp; Thorchain is a Decentralized exchange that allows you to take out collateralized loans with no interest. For example you can take a loan out against your bitcoin for 44k and then you will receive 44k USD to do whatever you want with and there is zero interest or time period that you have to pay it back in. It's funny, you tell people this and they think you're crazy. HOW CAN THERE BE A LOAN WITHOUT INTEREST?! everyone exclaims. Well that's because crypto is a replacement for bank and bankers operate off of greed and decentralized exchanges operate off of smart contracts. The code that is exchanging your coin for another coin doesn't need interest off of your loan because we as individuals on earth can create a system that is fair and doesn't take advantage of people. We can create code that governs contractual agreements that we consent to.
 
@@ -20,7 +20,7 @@ Zephyr is also really interesting because it's so new the current market cap is 
 
 # How to Set Up Zephyr Mining rig
 1. First you will need to Create a Zephyr wallet. This is where your mined zephyr will be deposited to. 
-    - Create an account
+   - Create an account
     - Save your key file
     - Grab you wallet id for later
 
@@ -32,13 +32,12 @@ Zephyr is also really interesting because it's so new the current market cap is 
 3. Start Mining Rig!
     - In the folder of your extracted files you will need to execute the `xmrig` file. I'm using linux so I created a file that will run your program with the correct configuration
 
-
     - Create a start script with the correct mining pool which can be found at [Zephyr Hero Miners](https://zephyr.herominers.com/#). 
     - You will need to pick the closest mining pool geographically. I'm in the midwest so I'm going to pick the North American East pool -> us2.zephyr.herominers.com:1123. 
     - Your wallet address is the address you stored from step one and the worker name can be whatever you want .
 
 ### Create Execution Script
-This file needs to be run as an root otherwise you will get some errors. (On windows run as administrator)
+This file needs to be run as an root otherwise you will get some errors. (On windows run file as administrator and the execution command can be found at bottom of the page [here](https://zephyr.herominers.com/#how-to-mine-zephyr-zeph).
 ```bash 
 echo "#!/bin/bash \n\nsudo ./xmrig --donate-level 1 -o us2.zephyr.herominers.com:1123 -u YOUR_ZEPH_WALLET_ADDRESS -p YOUR_WORKER_NAME -a rx/0 -k" > script.sh 
 
