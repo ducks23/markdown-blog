@@ -3,6 +3,8 @@ title: 'Crypto AHHHHHH'
 date: '2023-12-19'
 ---
 
+![Pepe Link]()
+
 &nbsp;&nbsp;&nbsp;&nbsp; In the past couple of months we have seen bitcoin rise from the bottom of 15k all the way to 44k I have become very inspired by a lot of the technologies in the DeFi Landscape. A lot of people talk about how bitcoin will replace dollars and all that but I believe that we are in the very infant stages of crypto. I would compare it to the time when we all had dial up and had to connect to the internet through AOL. At that time it was incredible what could be done but looking back in retrospect it seemed like the stone ages.
 In 2023 I think that there are some incredible financial technologies in the crypto world, but they're not quite efficient or cost effective enough but I think that time will come. 
 
@@ -36,7 +38,7 @@ Create a start script with the correct mining pool which can be found at [Zephyr
 
 ### Create Run Script
 ```bash 
-echo " sudo ./xmrig --donate-level 1 -o us2.zephyr.herominers.com:1123 -u YOUR_ZEPH_WALLET_ADDRESS -p YOUR_WORKER_NAME -a rx/0 -k" > script.sh 
+echo "sudo ./xmrig --donate-level 1 -o us2.zephyr.herominers.com:1123 -u YOUR_ZEPH_WALLET_ADDRESS -p YOUR_WORKER_NAME -a rx/0 -k" > script.sh 
 
 chmod +x script.sh
 ```
