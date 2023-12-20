@@ -3,7 +3,7 @@ title: 'Crypto AHHHHHH'
 date: '2023-12-19'
 ---
 
-![Pepe Link](https://github.com/ducks23/markdown-blog/blob/main/images/pepe_link.JPG)
+![Pepe Link](https://raw.githubusercontent.com/ducks23/markdown-blog/main/images/pepe_link.JPG)
 
 &nbsp;&nbsp;&nbsp;&nbsp; In the past couple of months we have seen bitcoin rise from the bottom of 15k all the way to 44k I have become very inspired by a lot of the technologies in the DeFi Landscape. A lot of people talk about how bitcoin will replace dollars and all that but I believe that we are in the very infant stages of crypto. I would compare it to the time when we all had dial up and had to connect to the internet through AOL. At that time it was incredible what could be done but looking back in retrospect it seemed like the stone ages.
 In 2023 I think that there are some incredible financial technologies in the crypto world, but they're not quite efficient or cost effective enough but I think that time will come. 
