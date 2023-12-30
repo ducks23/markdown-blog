@@ -1,12 +1,25 @@
+import { motion } from "framer-motion";
+import Link from "next/link";
+
 export default function NavBar() {
-	return (
-		<nav>
-			<div className="nav-div-container">
-				<div>blog logo</div>
-				<div>
-					<a href="https://jesseleonard.app"> My main website</a>
-				</div>
-			</div>
-		</nav>
-	);
+  return (
+    <nav>
+      <div className="nav-div-container">
+        <Link href={"/"}>
+          <i style={{ color: "#8338ec" }} className="fas fa-home"></i>
+        </Link>
+
+        <div>
+          <div className="example-container">
+            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+              {" "}
+              <a className="link-button" href="https://jesseleonard.app">
+                My Portoflio{" "}
+              </a>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
 }

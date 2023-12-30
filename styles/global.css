@@ -22,12 +22,15 @@ body {
     text-align: center;
     border-radius: 0.5rem;
     font-size: 16px;
-    background: grey;
+    font-size: large;
+    background: lightgreen;
 }
 
 .nav-div-container {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 25px;
+    color:#8338ec
 }
 
 * {
@@ -37,6 +40,7 @@ body {
 a {
     color: #0070f3;
     text-decoration: none;
+    padding: 10px;
 }
 
 a:hover {
@@ -46,4 +50,34 @@ a:hover {
 img {
     max-width: 100%;
     display: block;
+}
+
+nav-text {
+    padding: 10px;
+}
+.example-container div {
+    background: #8338ec;
+    border-radius: 30px;
+    padding: 4px;
+    width: auto;
+    height: auto;
+}
+.link-button {
+    color: white;
+    padding: 10px;
+}
+
+.refresh {
+    padding: 10px;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
