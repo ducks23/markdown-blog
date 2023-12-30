@@ -13,7 +13,7 @@ export default function NavBar() {
           <div className="example-container">
             <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
               {" "}
-              <a className="link-button" href="https://jesseleonard.app">
+              <a className="link-button" href="https://jesse-leonard.com">
                 My Portoflio{" "}
               </a>
             </motion.div>
