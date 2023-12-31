@@ -1,12 +1,15 @@
 ---
-title: 'How to Setup nginx ingress-controller in EKS'
-date: '2023-08-19'
+title: "How to Setup nginx ingress-controller in EKS"
+date: "2023-08-19"
 ---
-
 
 # Summary
 
 This repo is to help deploy an ingress controller to your EKS cluster in AWS and setting up routing by path.
+
+# Video
+
+[Link](https://www.youtube.com/watch?v=MvvDrvAwDfE&t=3s&ab_channel=JesseLeonard-CloudArchitect)
 
 # Requirements
 
@@ -18,12 +21,10 @@ This repo is to help deploy an ingress controller to your EKS cluster in AWS and
 
 # Architecture
 
-
 ![Ingress Controller Architecture](https://raw.githubusercontent.com/ducks23/markdown-blog/main/images/ingress_controller.png)
 
-
-
 # Install kubectl and helm
+
 ```
 sudo snap install helm --classic
 
@@ -31,7 +32,9 @@ sudo snap install kubectl --classic
 ```
 
 # Install eksctl on your architecture
+
 for ARM systems, set ARCH to: `arm64`, `armv6` or `armv7`
+
 ```
 ARCH=arm64
 PLATFORM=$(uname -s)_$ARCH
@@ -40,7 +43,7 @@ curl -sLO "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_
 
 curl -sL "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_checksums.txt" | grep $PLATFORM | sha256sum --check
 
-tar -xzf eksctl_$PLATFORM.tar.gz -C /tmp && rm eksctl_$PLATFORM.tar.gz 
+tar -xzf eksctl_$PLATFORM.tar.gz -C /tmp && rm eksctl_$PLATFORM.tar.gz
 
 sudo mv /tmp/eksctl /usr/local/bin
 
@@ -63,6 +66,7 @@ aws configure
 ```
 
 # Create EKS Cluster
+
 ```
 eksctl create cluster demo
 ```
@@ -70,18 +74,17 @@ eksctl create cluster demo
 ```
 $ kubectl get nodes -o wide
 
-NAME                                           STATUS   ROLES    AGE     VERSION                INTERNAL-IP      EXTERNAL-IP     OS-IMAGE     
+NAME                                           STATUS   ROLES    AGE     VERSION                INTERNAL-IP      EXTERNAL-IP     OS-IMAGE
 ip-192-168-17-251.us-west-2.compute.internal   Ready    <none>   5m18s   v1.25.11-eks-a5565ad   192.168.17.251   35.90.152.103   Amazon Linux 2
-ip-192-168-39-182.us-west-2.compute.internal   Ready    <none>   5m19s   v1.25.11-eks-a5565ad   192.168.39.182   35.87.93.163    Amazon Linux 2 
+ip-192-168-39-182.us-west-2.compute.internal   Ready    <none>   5m19s   v1.25.11-eks-a5565ad   192.168.39.182   35.87.93.163    Amazon Linux 2
 ```
-
 
 # Add Ingress Controller to Cluster
 
 ```
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 
-kubectl create namespace nginx-ingress 
+kubectl create namespace nginx-ingress
 
 helm install ingress-nginx ingress-nginx/ingress-nginx -n nginx-ingress
 
@@ -96,8 +99,8 @@ ingress-nginx-controller             LoadBalancer   10.100.254.148   a651a674528
 ingress-nginx-controller-admission   ClusterIP      10.100.122.196   <none>
 
 ```
-note the EXTERNAL-IP is the url that you can go to in your browser that points to your nginx load balancer now.
 
+note the EXTERNAL-IP is the url that you can go to in your browser that points to your nginx load balancer now.
 
 # Deploy Pods
 
@@ -109,6 +112,7 @@ kubectl apply -f https://raw.githubusercontent.com/ducks23/ingress-controller/ma
 ```
 
 # Deploy Ingress service to route traffic to pods
+
 ```
 kubectl apply -f ./deployments/ingress.yaml
 ```
@@ -117,7 +121,6 @@ Now these two services are reachable is reachable at:
 
 - https://load-balancer.com/foo
 - https://load-balancer.com/bar
-
 
 # Clean Up Cluster
 
