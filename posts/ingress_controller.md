@@ -15,7 +15,10 @@ https://hostname/foo
 https://hostname/bar
 
 
-![Alt text](./imgs/ingress_controller.png "Title")
+
+
+![Alt ingress controller image](https://raw.githubusercontent.com/ducks23/ingress-controller/blob/main/imgs/ingress_controller.png)
+
 
 
 Technologies Used
