@@ -16,9 +16,7 @@ https://hostname/bar
 
 
 
-
-![Alt ingress controller image](https://raw.githubusercontent.com/ducks23/ingress-controller/blob/main/imgs/ingress_controller.png)
-
+![Ingress Controller Archtitecture](https://raw.githubusercontent.com/ducks23/markdown-blog/main/images/ingress-controller.png)
 
 
 Technologies Used
