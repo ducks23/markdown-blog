@@ -3,7 +3,7 @@ title: 'How to Set Up Zephyr Mining Rig with XMRig'
 date: '2023-12-31'
 ---
 
-![Pepe Link](https://raw.githubusercontent.com/ducks23/markdown-blog/main/images/pepe_link.JPG)
+![Pepe Link](https://raw.githubusercontent.com/ducks23/markdown-blog/main/images/zephyr.webp)
 
 
 # Background
