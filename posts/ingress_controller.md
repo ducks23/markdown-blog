@@ -8,24 +8,19 @@ date: '2023-08-19'
 
 This repo is to help deploy an ingress controller to your EKS cluster in AWS and setting up routing by path.
 
-For example services will be able to be reached at by going to:
+# Requirements
 
-https://hostname/foo
-
-https://hostname/bar
-
-
-
-![Ingress Controller Archtitecture](https://raw.githubusercontent.com/ducks23/markdown-blog/main/images/ingress-controller.png)
-
-
-Technologies Used
-
+- ubuntu 20.04
 - eksctl
 - kubernetes
 - helm
 - aws-cli
-- aws
+
+# Architecture
+
+
+![Ingress Controller Architecture](https://raw.githubusercontent.com/ducks23/markdown-blog/main/images/ingress_controller.png)
+
 
 
 # Install kubectl and helm
