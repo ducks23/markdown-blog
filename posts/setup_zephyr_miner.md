@@ -8,7 +8,7 @@ date: '2023-12-31'
 
 # Background
 
-In this post we will set up a mining rig to mine Zephyr. Im using an application called xmring on ubuntu ([install from usb](https://help.ubuntu.com/community/Installation/FromUSBStick)) to mine zephyr.
+In this post we will set up a mining rig to mine Zephyr. Im using an application called xmring on ubuntu ([install ubuntu from usb](https://help.ubuntu.com/community/Installation/FromUSBStick)) to mine zephyr.
 
 At the end of this you will be able to mine zephyr and have funds continuously deposited into your wallet with only the effort of set up and very minimal maintenance.
 
@@ -25,7 +25,7 @@ At the end of this you will be able to mine zephyr and have funds continuously d
     - Grab you wallet id for later which is in the format of something similair to: ```ZEPHYR@$EASRR#$RWEFDSAF234wsdfa432awsd```
 
 2.  To start mining this you will need to download the xmr rig software that works for your operating system.
-    - Download xmrig[here.](https://xmrig.com/download)
+    - Download xmrig [here.](https://xmrig.com/download)
     - Unzip files to your preferred location.
 
 3. Start Mining Rig!
