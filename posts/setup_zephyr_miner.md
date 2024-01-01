@@ -57,7 +57,7 @@ chmod +x script.sh
 ./script.sh
 ```
 
-Congrats you are now mining crypto currency from the ether! After doing some research on the best processors to use to mine efficiently, using the AMD Ryzen 9 chips could mine anywhere from 2 to 4 zpehyr per month.
+Congrats you are now mining crypto currency from the ether! After doing some research on the best processors, the best to use would be the any AMD Ryzen 9 and you could mine anywhere from 2-4 zephyr tokens a month. So if your pc is mining slow consider upgrading. The more cores the higher your has rate will be.
 
 
 ## Check your progress
