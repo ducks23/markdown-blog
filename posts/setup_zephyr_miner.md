@@ -21,7 +21,7 @@ At the end of this you will be able to mine zephyr and have funds continuously d
 # How to Set Up Zephyr Mining rig
 1. First you will need to Create a Zephyr wallet. This is where your mined zephyr will be deposited to. 
    - Create wallet at https://wallet.zephyrprotocol.com/
-    - Save your key file
+    - Save your key file.
     - Grab you wallet id for later which is in the format of something similair to: ```ZEPHYR@$EASRR#$RWEFDSAF234wsdfa432awsd```
 
 2.  To start mining this you will need to download the xmr rig software that works for your operating system.
