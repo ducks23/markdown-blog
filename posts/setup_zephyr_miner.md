@@ -42,7 +42,7 @@ List of available pools to choose from https://zephyr.herominers.com
 ## Create Execution Script
  
 The execution script gives instructions to how you want to set up your mining rig. It tells xmrig what mining pool to use
-This file needs to be run as an root otherwise you will get some errors. (On windows run file as administrator and the execution command can be found at bottom of the page [here](https://zephyr.herominers.com/#how-to-mine-zephyr-zeph).
+This file needs to be run as an root otherwise you will get some errors. (On windows run xmrig file as administrator and more info can be found [here](https://zephyr.herominers.com/#how-to-mine-zephyr-zeph)).
 
 Copy this command into your terminal and replace ```YOUR_ZEPH_WALLET_ADDRESS``` with your wallet address and you can replace ```YOUR_WORKER_NAME``` with what you want to name the computer you have running.
 
