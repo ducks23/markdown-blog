@@ -1,5 +1,5 @@
 ---
-title: "How to Setup nginx ingress-controller in EKS"
+title: "How to Setup Nginx Ingress Controller in EKS"
 date: "2023-08-19"
 ---
 
