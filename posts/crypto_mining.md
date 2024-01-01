@@ -1,5 +1,5 @@
 ---
-title: 'Crypto AHHHHHH'
+title: 'Crypto Year Wrap Up'
 date: '2023-12-19'
 ---
 
