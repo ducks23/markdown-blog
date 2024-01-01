@@ -59,11 +59,9 @@ chmod +x script.sh
 ./script.sh
 ```
 
-Congrats you are now mining free money from the interwebs! I've done my research and most CPU's won't mine crypto very fast but if you use an AMD Ryzen 9 you should be able to mine a couple zephyr coins a month and make anywhere from 2 to 4 zpehyrs.
+Congrats you are now mining crypto currency from the ether! After doing some research on the best processors to use to mine efficiently, using the AMD Ryzen 9 chips could mine anywhere from 2 to 4 zpehyr per month.
 
 
-![Woajks](https://raw.githubusercontent.com/ducks23/markdown-blog/main/images/wojack_beliebes.JPG
-)
+## Check your progress
 
-Be safe.
-
+You can check your progress of you hash rate, payment history, and estimated earnings at https://zephyr.herominers.com/# by entering you wallet address
