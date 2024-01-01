@@ -8,7 +8,7 @@ date: '2023-12-31'
 
 # Background
 
-In this post we will set up a mining rig to mine Zephyr. Im using an application called xmring on ubuntu ([install ubuntu from usb](https://help.ubuntu.com/community/Installation/FromUSBStick)) to mine zephyr.
+In this post we will set up a mining rig to mine Zephyr. I'm using an application called xmrig on ubuntu ([install ubuntu from usb](https://help.ubuntu.com/community/Installation/FromUSBStick)) to mine zephyr.
 
 At the end of this you will be able to mine zephyr and have funds continuously deposited into your wallet with only the effort of set up and very minimal maintenance.
 
