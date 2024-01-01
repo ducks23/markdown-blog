@@ -8,7 +8,7 @@ export default function NavBar() {
         <Link href={"/"}>
           <i
             style={{ color: "#8338ec", padding: "12px" }}
-            className="fas fa-home"
+            className="fas highlight-button fa-home"
           ></i>
         </Link>
 

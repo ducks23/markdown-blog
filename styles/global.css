@@ -82,3 +82,20 @@ nav-text {
     align-items: center;
     cursor: pointer;
 }
+
+.highlight-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color: white; /* Default background color */
+    color: #ffffff; /* Default text color */
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Transition effect for smooth color change */
+  }
+
+  /* Change background color on hover */
+  .highlight-button:hover {
+    background-color: #0070f3; /* New background color on hover */
+  }
