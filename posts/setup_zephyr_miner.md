@@ -8,11 +8,9 @@ date: '2023-12-31'
 
 # Background
 
-In this Article we will go about setting up a mining rig to mine Zephyr. We will use xmrig as the software that will be running
-the mining algorithm. I'm using ubuntu ([install from usb](https://help.ubuntu.com/community/Installation/FromUSBStick)) which is 
-a common linux distribution but can also be run on mac os or windows.
+In this post we will set up a mining rig to mine Zephyr. Im using an application called xmring on ubuntu ([install from usb](https://help.ubuntu.com/community/Installation/FromUSBStick))to mine zephyr.
 
-At the end of this you will be able to mine zephyr and have funds deposited directly into your wallet with only the effort of set up.
+At the end of this you will be able to mine zephyr and have funds continuously deposited into your wallet with only the effort of set up and very minimal maintenance.
 
 ## Resources
 
@@ -64,4 +62,4 @@ Congrats you are now mining crypto currency from the ether! After doing some res
 
 ## Check your progress
 
-You can check your progress of you hash rate, payment history, and estimated earnings at https://zephyr.herominers.com/# by entering you wallet address
+You can check your progress of you hash rate, payment history, and estimated earnings at https://zephyr.herominers.com/# by entering you wallet address.
