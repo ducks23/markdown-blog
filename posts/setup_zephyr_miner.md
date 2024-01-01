@@ -1,5 +1,5 @@
 ---
-title: 'How to Set Up Zephyr Mining Rig with XMRig'
+title: 'How to Set Up Zephyr Mining Rig'
 date: '2023-12-31'
 ---
 
