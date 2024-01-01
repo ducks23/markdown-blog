@@ -6,7 +6,10 @@ export default function NavBar() {
     <nav>
       <div className="nav-div-container">
         <Link href={"/"}>
-          <i style={{ color: "#8338ec" }} className="fas fa-home"></i>
+          <i
+            style={{ color: "#8338ec", padding: "10px" }}
+            className="fas fa-home"
+          ></i>
         </Link>
 
         <div>
