@@ -8,7 +8,7 @@ date: '2023-12-31'
 
 # Background
 
-In this post we will set up a mining rig to mine Zephyr. Im using an application called xmring on ubuntu ([install from usb](https://help.ubuntu.com/community/Installation/FromUSBStick))to mine zephyr.
+In this post we will set up a mining rig to mine Zephyr. Im using an application called xmring on ubuntu ([install from usb](https://help.ubuntu.com/community/Installation/FromUSBStick)) to mine zephyr.
 
 At the end of this you will be able to mine zephyr and have funds continuously deposited into your wallet with only the effort of set up and very minimal maintenance.
 
@@ -20,7 +20,7 @@ At the end of this you will be able to mine zephyr and have funds continuously d
 
 # How to Set Up Zephyr Mining rig
 1. First you will need to Create a Zephyr wallet. This is where your mined zephyr will be deposited to. 
-   - Create wallet at https://wallet.zephyrprotocol.com/
+   - Create wallet at https://wallet.zephyrprotocol.com
     - Save your key file.
     - Grab you wallet id for later which is in the format of something similair to: ```ZEPHYR@$EASRR#$RWEFDSAF234wsdfa432awsd```
 
@@ -33,7 +33,7 @@ At the end of this you will be able to mine zephyr and have funds continuously d
 
 To start your mining rig you will need 2 values. Your wallet address and the address of the mining pool closest to you geographically.
 
-Here is the list of available pools to use from https://zephyr.herominers.com/#
+List of available pools to choose from https://zephyr.herominers.com
 
 
 ![Mining pools](https://raw.githubusercontent.com/ducks23/markdown-blog/main/images/mining_pools.png)
@@ -62,4 +62,4 @@ Congrats you are now mining crypto currency from the ether! After doing some res
 
 ## Check your progress
 
-You can check your progress of you hash rate, payment history, and estimated earnings at https://zephyr.herominers.com/# by entering you wallet address.
+You can check your progress of you hash rate, payment history, and estimated earnings at https://zephyr.herominers.com by entering you wallet address.
