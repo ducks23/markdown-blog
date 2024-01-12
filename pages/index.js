@@ -4,7 +4,6 @@ import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
-import Nav from "../components/nav";
 
 export default function Home({ allPostsData }) {
   return (
@@ -15,6 +14,24 @@ export default function Home({ allPostsData }) {
       <section className={utilStyles.headingMd}>
         <p className="paragraph_idx">Welcome human </p>
       </section>
+      <div>
+        <Link href={"/subscribe"}>
+          <button
+            style={{
+              display: "block",
+              margin: "auto",
+              backgroundColor: "#1F51FF	",
+              color: "white",
+              border: "none",
+              borderRadius: "50px",
+              padding: "10px",
+              fontSize: "17px",
+            }}
+          >
+            Subscribe To My Email List!
+          </button>
+        </Link>
+      </div>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
