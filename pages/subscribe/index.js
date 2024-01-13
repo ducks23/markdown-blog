@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 
 import Layout from "../../components/layout";
+import AWS from "aws-sdk";
 
 import { ChakraProvider } from "@chakra-ui/react";
 import {
@@ -25,40 +26,69 @@ export default function EmailForm() {
   } = useForm();
 
   async function onSubmit(values) {
-    console.log(values);
-    emailjs
-      .send("service_jc1unvt", "template_pnzl32f", values, "K2i9c6y8AURAqNsTW")
-      .then(
-        () => {
-          toast({
-            title: "Email Sent",
-            description: "Thank you, we will get back to you soon.",
-            status: "success",
-            duration: 9000,
-            isClosable: true,
-          });
-          emailjs
-            .send(
-              "service_jc1unvt",
-              "template_qdwb95f",
-              values,
-              "K2i9c6y8AURAqNsTW"
-            )
-            .then((err) => {
+    var config = new AWS.Config({
+      accessKeyId: "AKIASV7FIZCBLC5BGB7U",
+      secretAccessKey: "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",
+      region: "us-west-2",
+    });
+
+    const lambda = new AWS.Lambda(config);
+
+    values["action"] = "add";
+
+    const params = {
+      FunctionName: "myLambdaFunction", // replace with your function name
+      Payload: JSON.stringify(values), // replace with your payload
+    };
+
+    lambda.invoke(params, function (err, data) {
+      if (err) {
+        console.log(err, err.stack);
+        toast({
+          title: "Error",
+          description: "Didn't work",
+          status: "error",
+          duration: 9000,
+          isClosable: true,
+        });
+      } else if (parseInt(data.Payload) === 200) {
+        emailjs
+          .send(
+            "service_jc1unvt",
+            "template_rued7sh",
+            values,
+            "K2i9c6y8AURAqNsTW"
+          )
+          .then(
+            () => {
+              toast({
+                title: "Email Sent",
+                description: "You are subscribed to Jesse's news letter.",
+                status: "success",
+                duration: 9000,
+                isClosable: true,
+              });
+            },
+            (err) => {
               console.log(err);
-            });
-        },
-        (err) => {
-          console.log(err);
-          toast({
-            title: "Not Sent",
-            description: "Please reach out with email above or over phone",
-            status: "error",
-            duration: 9000,
-            isClosable: true,
-          });
-        }
-      );
+              toast({
+                title: "Not Sent",
+                description: "sorry",
+                status: "error",
+                duration: 9000,
+                isClosable: true,
+              });
+            }
+          );
+      } else if (parseInt(data.Payload) === 201) {
+        toast({
+          title: "You are already subscribed",
+          status: "info",
+          duration: 9000,
+          isClosable: true,
+        });
+      }
+    });
   }
 
   return (
