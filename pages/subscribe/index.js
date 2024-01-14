@@ -19,6 +19,12 @@ import {
 export default function EmailForm() {
   const toast = useToast();
 
+  const lambda = new AWS.Lambda({
+    region: "us-west-2",
+    accessKeyId: "AKIASV7FIZCBAKETOV6T", //process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: "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", //process.env.AWS_SECRET_ACCESS_KEY,
+  });
+
   const {
     handleSubmit,
     register,
@@ -26,21 +32,12 @@ export default function EmailForm() {
   } = useForm();
 
   async function onSubmit(values) {
-    var config = new AWS.Config({
-      accessKeyId: "AKIASV7FIZCBLC5BGB7U",
-      secretAccessKey: "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",
-      region: "us-west-2",
-    });
-
-    const lambda = new AWS.Lambda(config);
-
     values["action"] = "add";
 
     const params = {
       FunctionName: "myLambdaFunction", // replace with your function name
       Payload: JSON.stringify(values), // replace with your payload
     };
-
     lambda.invoke(params, function (err, data) {
       if (err) {
         console.log(err, err.stack);
