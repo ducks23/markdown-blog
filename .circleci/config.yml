@@ -25,12 +25,12 @@ jobs:
           path: example.txt
   deploy:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/node:18
     steps:
       # Replace this with steps to deploy to users
       - run:
           name: deploy
-          command: "#e.g. ./deploy.sh"
+          command: node ./script.js
 workflows:
   example:
     jobs:
