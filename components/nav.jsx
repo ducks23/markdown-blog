@@ -12,19 +12,17 @@ export default function NavBar() {
           ></i>
         </Link>
 
-        <div>
-          <div className="example-container">
-            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
-              {" "}
-              <a
-                style={{ margin: "auto" }}
-                className="link-button"
-                href="https://jesse-leonard.com"
-              >
-                My Portoflio{" "}
-              </a>
-            </motion.div>
-          </div>
+        <div className="example-container">
+          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+            {" "}
+            <a
+              style={{ margin: "auto" }}
+              className="link-button"
+              href="https://jesse-leonard.com"
+            >
+              My Portoflio{" "}
+            </a>
+          </motion.div>
         </div>
       </div>
     </nav>

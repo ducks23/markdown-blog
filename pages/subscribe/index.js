@@ -6,11 +6,9 @@ import { ChakraProvider } from "@chakra-ui/react";
 
 import {
   FormErrorMessage,
-  FormLabel,
   FormControl,
   Input,
   Button,
-  Textarea,
   useToast,
   Center,
 } from "@chakra-ui/react";
