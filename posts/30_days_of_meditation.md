@@ -1,5 +1,5 @@
 ---
-title: 'Mindful Journal 1 of 30'
+title: '1/30 - Mindful Journal'
 date: '2024-01-13'
 ---
 

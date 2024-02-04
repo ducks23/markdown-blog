@@ -1,10 +1,9 @@
+"use client";
 import { useForm } from "react-hook-form";
-import emailjs from "@emailjs/browser";
-
 import Layout from "../../components/layout";
-import AWS from "aws-sdk";
-
+import emailjs from "@emailjs/browser";
 import { ChakraProvider } from "@chakra-ui/react";
+
 import {
   FormErrorMessage,
   FormLabel,
@@ -19,12 +18,6 @@ import {
 export default function EmailForm() {
   const toast = useToast();
 
-  const lambda = new AWS.Lambda({
-    region: "us-west-2",
-    accessKeyId: "AKIASV7FIZCBAKETOV6T", //process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: "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", //process.env.AWS_SECRET_ACCESS_KEY,
-  });
-
   const {
     handleSubmit,
     register,
@@ -32,60 +25,77 @@ export default function EmailForm() {
   } = useForm();
 
   async function onSubmit(values) {
-    values["action"] = "add";
+    emailjs
+      .send(
+        "service_jc1unvt",
+        "template_de7n915",
+        { test_val: "hello world" },
+        "K2i9c6y8AURAqNsTW"
+      )
+      .then(
+        () => {
+          console.log("success");
+        },
+        (err) => {
+          console.log(err);
+          console.log("error");
+        }
+      );
 
-    const params = {
-      FunctionName: "myLambdaFunction", // replace with your function name
-      Payload: JSON.stringify(values), // replace with your payload
-    };
-    lambda.invoke(params, function (err, data) {
-      if (err) {
-        console.log(err, err.stack);
-        toast({
-          title: "Error",
-          description: "Didn't work",
-          status: "error",
-          duration: 9000,
-          isClosable: true,
-        });
-      } else if (parseInt(data.Payload) === 200) {
-        emailjs
-          .send(
-            "service_jc1unvt",
-            "template_rued7sh",
-            values,
-            "K2i9c6y8AURAqNsTW"
-          )
-          .then(
-            () => {
-              toast({
-                title: "Email Sent",
-                description: "You are subscribed to Jesse's news letter.",
-                status: "success",
-                duration: 9000,
-                isClosable: true,
-              });
-            },
-            (err) => {
-              console.log(err);
-              toast({
-                title: "Not Sent",
-                description: "sorry",
-                status: "error",
-                duration: 9000,
-                isClosable: true,
-              });
-            }
-          );
-      } else if (parseInt(data.Payload) === 201) {
-        toast({
-          title: "You are already subscribed",
-          status: "info",
-          duration: 9000,
-          isClosable: true,
-        });
-      }
-    });
+    values["action"] = "add";
+    fetch("/api/subscribe", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    })
+      .then((res) => {
+        if (res.status === 200) {
+          emailjs
+            .send(
+              "service_jc1unvt",
+              "template_rued7sh",
+              values,
+              "K2i9c6y8AURAqNsTW"
+            )
+            .then(
+              () => {
+                console.log("success");
+              },
+              (err) => {
+                console.log(err);
+                console.log("error");
+              }
+            );
+          toast({
+            title: "Email Sent",
+            description: "You are subscribed to Jesse's news letter.",
+            status: "success",
+            duration: 9000,
+            isClosable: true,
+          });
+        } else if (res.status === 201) {
+          toast({
+            title: "You are already subscribed",
+            status: "info",
+            duration: 9000,
+            isClosable: true,
+          });
+        } else {
+          toast({
+            title: "Not Sent",
+            description: "sorry",
+            status: "error",
+            duration: 9000,
+            isClosable: true,
+          });
+        }
+      })
+      .then((data) => {
+        console.log(data);
+      });
   }
 
   return (

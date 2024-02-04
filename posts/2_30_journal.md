@@ -1,6 +1,6 @@
 ---
-title: 'Mindful Journal 2 of 30'
-date: '2024-01-14'
+title: '2/30 - Mindful Journal'
+date: '2024-01-15'
 ---
 
 # Day 2
