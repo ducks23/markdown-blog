@@ -8,7 +8,7 @@ date: '2024-01-29'
 
 
 1. AVAX
-    1. AVAX Validatior nodes 
+    1. AVAX Validatior nodes
        * A Key store user is needed to create a subnet
        * there are three chains. 
          1. p-chain: is for platform management. It handles requests related to
@@ -24,3 +24,4 @@ function() {
 
 }
 ```
+docker run --name chainlink:latest -v ~/.chainlink-goerli:/chainlink -it -p 6688:6688 --add-host=host.docker.internal:host-gateway smartcontract/chainlink:2.8.0 node -config /chainlink/config.toml -secrets /chainlink/secrets.toml start

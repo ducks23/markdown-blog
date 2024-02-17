@@ -15,8 +15,9 @@ export default function handler(req, res) {
       FunctionName: lambdaName, // replace with your function name
       Payload: JSON.stringify(values), // replace with your payload
     };
+    console.log("Inside subscribe post endpoint")
 
-    lambda.invoke(params, function (err, data) {
+    lambda.invoke(params, function(err, data) {
       if (err) {
         console.log(err, err.stack);
       } else if (parseInt(data.Payload) === 200) {
@@ -37,7 +38,7 @@ export default function handler(req, res) {
       FunctionName: lambdaName,
       Payload: JSON.stringify(values),
     };
-    lambda.invoke(params, function (err, data) {
+    lambda.invoke(params, function(err, data) {
       if (err) {
         console.log(err, err.stack);
       } else {
