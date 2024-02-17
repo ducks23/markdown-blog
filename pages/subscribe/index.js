@@ -41,6 +41,7 @@ export default function EmailForm() {
       );
 
     values["action"] = "add";
+    console.log(values)
     fetch("https://jesseleonard.app/api/subscribe", {
       method: "POST",
       headers: {
