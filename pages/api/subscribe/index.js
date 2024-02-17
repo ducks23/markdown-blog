@@ -1,9 +1,12 @@
-import AWS from "aws-sdk";
+import { Lambda } from "@aws-sdk/client-lambda";
 
-const lambda = new AWS.Lambda({
+const lambda = new Lambda({
   region: "us-west-2",
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+
+  credentials: {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  },
 });
 
 const lambdaName = "myLambdaFunction";
