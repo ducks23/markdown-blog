@@ -44,7 +44,8 @@ export default function EmailForm() {
     fetch("https://jesseleonard.app/api/subscribe", {
       method: "POST",
       headers: {
-        Accept: "application/json",
+        "Accept": "application/json",
+        "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json",
       },
       body: JSON.stringify(values),
