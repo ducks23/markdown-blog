@@ -1,10 +1,11 @@
 import Head from "next/head";
+import { motion } from "framer-motion";
 import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
-import Nav from "../components/nav";
+
 
 export default function Home({ allPostsData }) {
   return (
@@ -12,9 +13,24 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p className="paragraph_idx">Welcome human </p>
+      <section style={{ "maxWidth": "300px", margin: "auto" }} className={utilStyles.headingMd}>
+        <p style={{ "maxWidth": "9000px" }} className="paragraph_idx">Welcome human </p>
       </section>
+      <Link href={"/subscribe"}>
+
+        <div style={{ margin: "auto", maxWidth: "160px", textAlign: "center" }} className="example-container">
+          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+            {" "}
+            <a
+              style={{ margin: "auto" }}
+              className="link-button"
+              href="/subscribe"
+            >
+              Subscribe{" "}
+            </a>
+          </motion.div>
+        </div>
+      </Link>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
