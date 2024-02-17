@@ -41,10 +41,11 @@ export default function EmailForm() {
       );
 
     values["action"] = "add";
-    fetch("https://jesseleonard.app/api/subscribe/", {
+    fetch("https://jesseleonard.app/api/subscribe", {
       method: "POST",
       headers: {
-        Accept: "application/json",
+        "Accept": "application/json",
+        "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json",
       },
       body: JSON.stringify(values),
