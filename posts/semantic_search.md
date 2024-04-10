@@ -20,13 +20,29 @@ pip install pandas numpy openai elasticsearch
 
 ### Load data using pandas
 
+First we want to be able to load a csv of whatever you would like into a python
+varaiable
+
 ```python
 import pandas as pd
-df = pd.read_csv("/Users/jesseleonard/code/bible/django-bible/output.csv")
+df = pd.read_csv("/Users/jesseleonard/Downloads/nasb.csv")
 print(df.head(5))
+
+>>> df.head(5)
+   Book  Chapter  Verse                                               text
+0     1        1      1  In the beginning God created the heavens and t...
+1     1        1      2  The earth was formless and void and darkness w...
+2     1        1      3  Then God said \Let there be light\"; and there...
+3     1        1      4  God saw that the light was good; and God separ...
+4     1        1      5  God called the light day and the darkness He c...
+
 ```
 
 ### Apply Embeddings by Calling Open AI client
+
+Now we want to use the open ai client to embed our data. We will use the
+text-embedding-3-small model to embed our data. The second to last line will
+apply the get embeddigns1 function to every row in the dataframe. The last line will save the dataframe to a csv file.
 
 ```python
 from openai import OpenAI
@@ -47,6 +63,8 @@ df.to_csv("word_embeddings.csv")
 
 ### Create a Search Term & Embed it
 
+Now we want to create a search term and embed it using the same model as before.
+
 ```python
 search_term = input("ask a question")
 search_term_vector = get_embedding(search_term)
@@ -64,10 +82,10 @@ df["embedding"] = df["embedding"].apply(eval).apply(np.array)
 
 ### Apply search term cosine similarities
 
+This applies cosine similarity between search term and every item in dataframe and places it in the similarities row. Then writes this file to csv
+
 ```python
-# applies cosine similarity between search term and every item in dataframe.
-# places it in the similarities row
-# Writes this file to csv
+
 df["similarities"] = df["embedding"].apply(
     lambda x: cosine_similarity(x, search_term_vector)
 )
@@ -75,7 +93,10 @@ df = df.sort_values("similarities", ascending=False).head(20)
 df.to_csv("similarities.csv")
 ```
 
-### set up elasticsearch with docker
+Our problem is that this takes a long time to run these calculations just using the pandas library. We can speed up this process by using elastic search to
+index our data.
+
+### Set up Elasticsearch with docker
 
 ```
 docker network create elastic
@@ -150,7 +171,7 @@ for record in record_list:
 ### Make a search query
 
 ```python
-search_term = "What does jesus say about love"
+search_term = "What is the meaning of life"
 
 search_term_vector = get_embedding(search_term)
 query = {
