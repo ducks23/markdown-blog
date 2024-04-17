@@ -25,39 +25,46 @@ varaiable
 
 ```python
 import pandas as pd
-df = pd.read_csv("/Users/jesseleonard/Downloads/nasb.csv")
-print(df.head(5))
+import numpy as np
 
+df = pd.read_csv("/Users/jesseleonard/Downloads/AG_news_samples.csv")
+df = df.head(1000)
+```
+
+```python
 >>> df.head(5)
-   Book  Chapter  Verse                                               text
-0     1        1      1  In the beginning God created the heavens and t...
-1     1        1      2  The earth was formless and void and darkness w...
-2     1        1      3  Then God said \Let there be light\"; and there...
-3     1        1      4  God saw that the light was good; and God separ...
-4     1        1      5  God called the light day and the darkness He c...
-
+                                               title                                        description  label_int     label
+0                                    World Briefings  BRITAIN: BLAIR WARNS OF CLIMATE THREAT Prime M...          1     World
+1  Nvidia Puts a Firewall on a Motherboard (PC Wo...  PC World - Upcoming chip set will include buil...          4  Sci/Tech
+2                Olympic joy in Greek, Chinese press  Newspapers in Greece reflect a mixture of exhi...          2    Sports
+3                          U2 Can iPod with Pictures  SAN JOSE, Calif. -- Apple Computer (Quote, Cha...          4  Sci/Tech
+4                                  The Dream Factory  Any product, any shape, any size -- manufactur...          4  Sci/Tech
 ```
 
 ### Apply Embeddings by Calling Open AI client
 
 Now we want to use the open ai client to embed our data. We will use the
 text-embedding-3-small model to embed our data. The second to last line will
-apply the get embeddigns1 function to every row in the dataframe. The last line will save the dataframe to a csv file.
+apply the get embeddigns1 function to every row in the dataframe. This will take
+a while so we are just going to do it with a small data set of 100 rows.
+The last line will save the dataframe to a csv file.
 
 ```python
 from openai import OpenAI
 
 client = OpenAI(
   max_retries=5,
-  api_key="api_key",
 )
+
 def get_embedding(text: str, model="text-embedding-3-small", **kwargs):
     # replace newlines, which can negatively affect performance.
     text = text.replace("\n", " ")
     response = client.embeddings.create(input=[text], model=model, **kwargs)
+    print("embedding received")
     return response.data[0].embedding
-)
-df["embedding"] = df["text"].apply(lambda x: get_embedding(x))
+
+
+df["embedding"] = df["title"].apply(lambda x: get_embedding(x))
 df.to_csv("word_embeddings.csv")
 ```
 
@@ -66,13 +73,13 @@ df.to_csv("word_embeddings.csv")
 Now we want to create a search term and embed it using the same model as before.
 
 ```python
-search_term = input("ask a question")
+search_term = "stock market crash"
 search_term_vector = get_embedding(search_term)
 ```
 
-### Create Embeddings file
+### Prepare the data for cosine similarity
 
-We need to run this numpy function to prep the data before applying cosine
+We need to prepare the data by running this numpy function to prep the data before applying cosine
 search.
 
 ```python
@@ -85,6 +92,8 @@ df["embedding"] = df["embedding"].apply(eval).apply(np.array)
 This applies cosine similarity between search term and every item in dataframe and places it in the similarities row. Then writes this file to csv
 
 ```python
+def cosine_similarity(a, b):
+      return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
 
 df["similarities"] = df["embedding"].apply(
     lambda x: cosine_similarity(x, search_term_vector)
@@ -157,7 +166,7 @@ es.indices.create(index="bible_verses", mappings=index_mapping)
 # conver dataframe to json objects
 record_list = df.to_dict("records")
 
-print(record_list[0])
+#print(record_list[0])
 
 for record in record_list:
   try:
